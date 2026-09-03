@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  /* Applica subito la lingua salvata (default: inglese al primo caricamento), prima del paint */
+  (function () {
+    try {
+      var saved = localStorage.getItem('gb-site-lang');
+      var lang = saved === 'it' || saved === 'en' ? saved : 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  /* Failsafe critico: se styles.css non si carica, il testo bilingue non deve mai duplicarsi */
+  html[data-lang="it"] .t-en { display: none; }
+  html[data-lang="en"] .t-it { display: none; }
+</style>
+<title data-it="Ricerca e pubblicazioni — Gabriele Belotti, PhD" data-en="Research and publications — Gabriele Belotti, PhD">Research and publications — Gabriele Belotti, PhD</title>
+<meta name="description" data-it="Tesi di dottorato e pubblicazioni scientifiche di Gabriele Belotti su CBCT, ricostruzione tomografica e adroterapia." data-en="Gabriele Belotti's PhD thesis and scientific publications on CBCT, tomographic reconstruction and hadron therapy." content="Gabriele Belotti's PhD thesis and scientific publications on CBCT, tomographic reconstruction and hadron therapy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="skip-link">
+  <a href="#main"><span class="t-it">Vai al contenuto</span><span class="t-en">Skip to content</span></a>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">Gabriele Belotti</a>
+
+    <div class="header-right">
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html"><span class="t-it">Chi sono</span><span class="t-en">About</span></a>
+        <a href="experience.html"><span class="t-it">Percorso</span><span class="t-en">Experience</span></a>
+        <a href="research.html" aria-current="page"><span class="t-it">Ricerca</span><span class="t-en">Research</span></a>
+        <a href="consulting.html"><span class="t-it">Consulenze</span><span class="t-en">Consulting</span></a>
+        <a href="contact.html"><span class="t-it">Contatti</span><span class="t-en">Contact</span></a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="lang-switch">
+          <button type="button" class="lang-current" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="flag" id="langFlag">🇬🇧</span>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Lingua / Language">
+            <li role="option" data-value="it">
+              <button type="button" data-lang-choice="it"><span class="flag">🇮🇹</span> Italiano</button>
+            </li>
+            <li role="option" data-value="en">
+              <button type="button" data-lang-choice="en"><span class="flag">🇬🇧</span> English</button>
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" id="navToggle">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <img src="assets/gabriele.jpg" class="sidebar-photo"
+           data-alt-it="Ritratto di Gabriele Belotti" data-alt-en="Portrait of Gabriele Belotti"
+           alt="Portrait of Gabriele Belotti" width="168" height="168">
+
+      <h2 class="sidebar-name">Gabriele Belotti</h2>
+      <p class="sidebar-tagline">
+        <span class="t-it">Ingegnere software e di sistema per l'imaging a raggi X, specializzato in CBCT e ricostruzione tomografica.</span>
+        <span class="t-en">X-ray research software and systems engineer, working on CBCT imaging and tomographic reconstruction for medical devices.</span>
+      </p>
+
+      <svg viewBox="0 0 210 210" class="sidebar-gantry" aria-hidden="true">
+        <circle cx="105" cy="105" r="98" class="arc arc-1"/>
+        <circle cx="105" cy="105" r="98" class="arc arc-2"/>
+        <circle cx="105" cy="105" r="75" class="arc arc-3"/>
+        <line x1="105" y1="7" x2="105" y2="203" class="axis"/>
+        <line x1="7" y1="105" x2="203" y2="105" class="axis"/>
+        <circle cx="105" cy="7" r="4" class="source"/>
+        <circle cx="105" cy="203" r="3" class="detector"/>
+        <g class="sidebar-sweep"><line x1="105" y1="105" x2="105" y2="7" class="beam"/></g>
+      </svg>
+
+      <hr class="sidebar-divider">
+
+      <p class="sidebar-meta">
+        <span class="t-it">Milano (MI), Italia</span>
+        <span class="t-en">Milan (MI), Italy</span>
+      </p>
+
+      <ul class="sidebar-links">
+        <li><a href="mailto:gabriele.belotti@polimi.it">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/gabriele-belotti-phd/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/GabrieleBelotti" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.researchgate.net/profile/Gabriele-Belotti-2" target="_blank" rel="noopener">ResearchGate</a></li>
+      </ul>
+
+      <a href="assets/GabrieleBelottiCV2026.pdf" class="sidebar-cv" download>
+        <span class="t-it">Scarica il CV</span>
+        <span class="t-en">Download CV</span>
+      </a>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <h1 class="page-heading"><span class="t-it">Ricerca e pubblicazioni</span><span class="t-en">Research and publications</span></h1>
+      <section class="content-section" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+
+        <div class="thesis-panel">
+          <p class="thesis-label">
+            <span class="t-it">Tesi di dottorato &middot; cum laude</span>
+            <span class="t-en">PhD thesis &middot; cum laude</span>
+          </p>
+          <h3>Development of Technologies for In-Room Image Guidance in Hadron Therapy</h3>
+          <p class="thesis-meta">
+            <span class="t-it">Politecnico di Milano &middot; Novembre 2019 – Marzo 2024 &middot; Relatore: Prof. Guido Baroni</span>
+            <span class="t-en">Politecnico di Milano &middot; November 2019 – March 2024 &middot; Supervisor: Prof. Guido Baroni</span>
+          </p>
+          <p>
+            <span class="t-it">Sei capitoli dedicati alla progettazione, calibrazione e validazione clinica di un sistema di imaging in sala per l'adroterapia: dall'estensione del campo di vista in geometria cone-beam alle strategie di imaging 4D correlate al respiro, fino alle tecniche di deep learning per la riduzione degli artefatti nella CBCT.</span>
+            <span class="t-en">Six chapters on the design, calibration and clinical validation of an in-room imaging system for hadron therapy: from field-of-view extension in cone-beam geometry to breathing-correlated 4D imaging strategies, through to deep learning techniques for artefact reduction in CBCT.</span>
+          </p>
+          <a href="https://www.politesi.polimi.it/retrieve/1e3e95e6-83ec-4a91-a763-a24726f56e77/phd_thesis_Gabriele_Belotti.pdf" class="link-underline" target="_blank" rel="noopener">
+            <span class="t-it">Leggi la tesi integrale (PDF, Politesi — Politecnico di Milano)</span>
+            <span class="t-en">Read the full thesis (PDF, Politesi — Politecnico di Milano)</span>
+          </a>
+        </div>
+
+        <h3 class="pub-heading"><span class="t-it">Articoli su rivista</span><span class="t-en">Journal articles</span></h3>
+        <ul class="pub-list">
+          <li>
+            <p class="pub-cite">Belotti, G., Fattori, G., Baroni, G., Rit, S. (2024). Extension of the cone-beam CT field-of-view using two complementary short scans. <em>Medical Physics</em>, 51(5), 3391–3404.</p>
+            <a class="doi-tag" href="https://doi.org/10.1002/mp.16869" target="_blank" rel="noopener">DOI: 10.1002/mp.16869</a>
+          </li>
+          <li>
+            <p class="pub-cite">Knäusl, B., Belotti, G., et al. (2024). A review of the clinical introduction of 4D particle therapy research concepts. <em>Physics and Imaging in Radiation Oncology</em>, 29, 100535.</p>
+            <a class="doi-tag" href="https://doi.org/10.1016/j.phro.2024.100535" target="_blank" rel="noopener">DOI: 10.1016/j.phro.2024.100535</a>
+          </li>
+          <li>
+            <p class="pub-cite">Rossi, M., Belotti, G., et al. (2024). Feasibility of proton dosimetry overriding planning CT with daily CBCT elaborated through generative artificial intelligence tools. <em>Computer Assisted Surgery</em>, 29(1), 2327981.</p>
+            <a class="doi-tag" href="https://doi.org/10.1080/24699322.2024.2327981" target="_blank" rel="noopener">DOI: 10.1080/24699322.2024.2327981</a>
+          </li>
+          <li>
+            <p class="pub-cite">Belotti, G., Rossi, M., Pella, A., Cerveri, P., Baroni, G. (2023). A new system for in-room image guidance in particle therapy at CNAO. <em>Physica Medica</em>, 114, 103162.</p>
+            <a class="doi-tag" href="https://doi.org/10.1016/j.ejmp.2023.103162" target="_blank" rel="noopener">DOI: 10.1016/j.ejmp.2023.103162</a>
+          </li>
+          <li>
+            <p class="pub-cite">Antonioli, L., Pella, A., Ricotti, R., Rossi, M., Fiore, M.R., Belotti, G., et al. (2021). Convolutional Neural Networks Cascade for Automatic Pupil and Iris Detection in Ocular Proton Therapy. <em>Sensors</em>, 21(13), 4400.</p>
+            <a class="doi-tag" href="https://doi.org/10.3390/s21134400" target="_blank" rel="noopener">DOI: 10.3390/s21134400</a>
+          </li>
+          <li>
+            <p class="pub-cite">Rossi, M., Belotti, G., et al. (2021). Image-based shading correction for narrow-FOV truncated pelvic CBCT with deep convolutional neural networks and transfer learning. <em>Medical Physics</em>, 48(11), 7112–7126.</p>
+            <a class="doi-tag" href="https://doi.org/10.1002/mp.15282" target="_blank" rel="noopener">DOI: 10.1002/mp.15282</a>
+          </li>
+        </ul>
+
+        <h3 class="pub-heading"><span class="t-it">Atti di conferenza</span><span class="t-en">Conference proceedings</span></h3>
+        <ul class="pub-list">
+          <li>
+            <p class="pub-cite">Belotti, G., Rit, S., Baroni, G. (2022). Extension of the cone-beam CT field-of-view using two short scans with displaced centers of rotation. <em>Seventh International Conference on Image Formation in X-Ray Computed Tomography (XCT22)</em>, SPIE, 12304.</p>
+            <a class="doi-tag" href="https://doi.org/10.1117/12.2646384" target="_blank" rel="noopener">DOI: 10.1117/12.2646384</a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Gabriele Belotti</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
