@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="it" data-lang="it">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
-  /* Applica subito la lingua salvata, prima del paint, per evitare sfarfallii */
+  /* Applica subito la lingua salvata (default: inglese al primo caricamento), prima del paint */
   (function () {
     try {
       var saved = localStorage.getItem('gb-site-lang');
-      var lang = saved || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+      var lang = saved === 'it' || saved === 'en' ? saved : 'en';
       document.documentElement.setAttribute('lang', lang);
       document.documentElement.setAttribute('data-lang', lang);
     } catch (e) {}
   })();
 </script>
-<title>Gabriele Belotti, PhD — Ingegnere software e di sistema per l'imaging a raggi X</title>
-<meta name="description" content="Gabriele Belotti, PhD in Bioingegneria — ingegnere software e di sistema per imaging a raggi X, CBCT e ricostruzione tomografica. Consulenze per aziende del settore medicale.">
+<title>Gabriele Belotti, PhD — X-ray research software &amp; systems engineer</title>
+<meta name="description" content="Gabriele Belotti, PhD in Bioengineering — X-ray imaging, CBCT and tomographic reconstruction software and systems engineer. Consulting for medical device companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ---------------------------------------------------------
-   Gabriele Belotti — design tokens
-   Palette ispirata al blueprint radiografico: carta fredda,
-   inchiostro blu-grafite, accento ciano da cianotipia/X-ray,
-   ambra usata con parsimonia per le consulenze.
---------------------------------------------------------- */
 :root {
   --bg: #F5F6F4;
   --bg-alt: #ECEEE9;
@@ -45,7 +39,7 @@
   --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --maxw: 980px;
+  --maxw: 1080px;
 }
 
 * { box-sizing: border-box; }
@@ -99,21 +93,15 @@ a { color: var(--accent-ink); }
   padding: 10px 16px;
   z-index: 100;
 }
-.skip-link a:focus {
-  left: 12px;
-  top: 12px;
-}
+.skip-link a:focus { left: 12px; top: 12px; }
 
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 /* ---------------- Language toggling ---------------- */
 html[data-lang="it"] .t-en { display: none; }
 html[data-lang="en"] .t-it { display: none; }
 
-/* ---------------- Header ---------------- */
+/* ---------------- Masthead ---------------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -139,65 +127,30 @@ html[data-lang="en"] .t-it { display: none; }
   letter-spacing: 0.01em;
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-}
+.header-right { display: flex; align-items: center; gap: 34px; }
 
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.site-nav a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
+.site-nav { display: flex; align-items: center; gap: 26px; }
+.site-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.95rem; }
 .site-nav a:hover { color: var(--accent-ink); }
+.nav-cta { color: var(--accent-ink) !important; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
 
-.nav-cta {
-  color: var(--accent-ink) !important;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 2px;
-}
-
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
+.header-controls { display: flex; align-items: center; gap: 14px; }
 
 .nav-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer;
 }
-.nav-toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--ink);
-}
+.nav-toggle span { display: block; width: 100%; height: 2px; background: var(--ink); }
 
 /* ---------------- Language switch ---------------- */
-.lang-switch {
-  position: relative;
-}
+.lang-switch { position: relative; }
 
 .lang-current {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+  display: flex; align-items: center; gap: 7px;
   background: none;
   border: 1px solid var(--line-strong);
   border-radius: 3px;
@@ -208,27 +161,14 @@ html[data-lang="en"] .t-it { display: none; }
   cursor: pointer;
 }
 .lang-current:hover { border-color: var(--ink); }
+.lang-current .flag { font-size: 1rem; line-height: 1; }
 
-.lang-current .flag {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.lang-caret {
-  width: 9px;
-  height: 6px;
-  color: var(--ink-faint);
-  transition: transform 0.15s ease;
-}
+.lang-caret { width: 9px; height: 6px; color: var(--ink-faint); transition: transform 0.15s ease; }
 .lang-current[aria-expanded="true"] .lang-caret { transform: rotate(180deg); }
 
 .lang-menu {
-  list-style: none;
-  margin: 0;
-  padding: 6px;
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
+  list-style: none; margin: 0; padding: 6px;
+  position: absolute; top: calc(100% + 8px); right: 0;
   min-width: 160px;
   background: var(--panel);
   border: 1px solid var(--line-strong);
@@ -238,400 +178,231 @@ html[data-lang="en"] .t-it { display: none; }
   display: none;
 }
 .lang-menu.open { display: block; }
-
 .lang-menu li { margin: 0; }
-
 .lang-menu button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 9px 10px;
-  background: none;
-  border: none;
-  border-radius: 3px;
-  text-align: left;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  color: var(--ink);
-  cursor: pointer;
+  width: 100%; display: flex; align-items: center; gap: 9px;
+  padding: 9px 10px; background: none; border: none; border-radius: 3px;
+  text-align: left; font-family: var(--font-body); font-size: 0.92rem;
+  color: var(--ink); cursor: pointer;
 }
 .lang-menu button:hover { background: var(--bg-alt); }
 .lang-menu button .flag { font-size: 1.05rem; }
 .lang-menu li[aria-selected="true"] button { color: var(--accent-ink); font-weight: 500; }
 
-/* ---------------- Buttons ---------------- */
+/* ---------------- Page layout: sidebar + content ---------------- */
+.page-layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 56px 28px 100px;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.sidebar { position: sticky; top: 96px; }
+
+.sidebar-photo {
+  width: 168px;
+  height: 168px;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+  filter: grayscale(15%);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.sidebar-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.35em;
+}
+
+.sidebar-tagline {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.sidebar-gantry { width: 100%; max-width: 130px; opacity: 0.7; margin: 0 0 20px; }
+.sidebar-gantry .arc { fill: none; stroke: var(--accent); }
+.sidebar-gantry .arc-1 { stroke-width: 1; opacity: 0.25; }
+.sidebar-gantry .arc-2 { stroke-width: 1; opacity: 0.45; stroke-dasharray: 3 6; }
+.sidebar-gantry .arc-3 { stroke-width: 1; opacity: 0.3; }
+.sidebar-gantry .axis { stroke: var(--line-strong); stroke-width: 1; }
+.sidebar-gantry .source { fill: var(--warm); }
+.sidebar-gantry .detector { fill: var(--accent-ink); }
+.sidebar-gantry .beam { stroke: var(--accent); stroke-width: 1.5; opacity: 0.55; }
+.sidebar-sweep { transform-origin: 105px 105px; animation: sweep 9s ease-in-out infinite; }
+@keyframes sweep {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) { .sidebar-sweep { animation: none; } }
+
+.sidebar-divider { border: none; border-top: 1px solid var(--line); margin: 18px 0; }
+
+.sidebar-meta {
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.sidebar-links { list-style: none; margin: 0 0 22px; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.sidebar-links a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+}
+.sidebar-links a:hover { color: var(--accent-ink); border-color: var(--accent); }
+
+.sidebar-cv {
+  display: block;
+  text-align: center;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.sidebar-cv:hover { border-color: var(--ink); background: var(--panel); }
+
+/* ---------------- Content ---------------- */
+.content { min-width: 0; }
+
+.content-section {
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+.content-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.section-heading {
+  font-size: 1.7rem;
+  margin-bottom: 0.9em;
+}
+
+.lede {
+  font-size: 1.08rem;
+  max-width: 62ch;
+}
+
+/* Bio */
+.bio-text p:last-child { margin-bottom: 0; }
+
+/* Timeline */
+.tl-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.tl-item:first-child { border-top: none; padding-top: 0; }
+.tl-when { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-ink); white-space: nowrap; padding-top: 0.2em; }
+.tl-body h3 { font-size: 1.15rem; margin-bottom: 0.2em; }
+.tl-org { color: var(--ink-faint); font-size: 0.92rem; margin-bottom: 0.6em; }
+.tl-body p:last-child { margin-bottom: 0; }
+
+/* Research */
+.thesis-panel {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: 26px 28px;
+  margin-bottom: 44px;
+}
+.thesis-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-ink); margin-bottom: 0.6em; }
+.thesis-panel h3 { font-size: 1.3rem; max-width: 34ch; }
+.thesis-meta { color: var(--ink-faint); font-size: 0.92rem; margin-bottom: 1em; }
+.thesis-panel p:not(.thesis-label):not(.thesis-meta) { color: var(--ink-soft); }
+
+.link-underline { text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; font-weight: 500; }
+.link-underline:hover { border-color: var(--accent-ink); }
+
+.pub-heading { font-size: 1.02rem; font-family: var(--font-body); font-weight: 600; color: var(--ink-faint); margin-top: 38px; margin-bottom: 16px; }
+
+.pub-list { list-style: none; margin: 0 0 8px; padding: 0; }
+.pub-list li { padding: 16px 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.pub-list li:first-child { border-top: none; }
+.pub-cite { margin: 0; color: var(--ink); flex: 1 1 480px; }
+.pub-cite em { font-style: italic; color: var(--ink-soft); }
+.doi-tag { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-ink); text-decoration: none; background: var(--accent-soft); padding: 4px 9px; border-radius: 2px; white-space: nowrap; }
+.doi-tag:hover { background: var(--accent); color: #fff; }
+
+/* Consulting */
+.consult-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.consult-card { background: var(--panel); padding: 24px 26px; border-left: 3px solid transparent; }
+.consult-teal { border-left-color: var(--accent); }
+.consult-amber { border-left-color: var(--warm); }
+.consult-card h3 { font-size: 1.05rem; margin-bottom: 0.5em; }
+.consult-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+.consult-cta { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+.consult-cta p { font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--ink); margin: 0; }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 40px; }
+.skill-group h4 { font-family: var(--font-body); font-size: 0.93rem; font-weight: 600; color: var(--ink-faint); margin-bottom: 0.4em; }
+.skill-group p { margin-bottom: 0; }
+
+/* Contact CTA */
+.contact-cta p { font-size: 1.08rem; max-width: 52ch; }
+
+/* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 11px 20px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   font-weight: 500;
   text-decoration: none;
   border-radius: 3px;
   border: 1px solid transparent;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-
-.btn-primary {
-  background: var(--ink);
-  color: #fff;
-}
+.btn-primary { background: var(--ink); color: #fff; }
 .btn-primary:hover { background: var(--accent-ink); }
-
-.btn-ghost {
-  border-color: var(--line-strong);
-  color: var(--ink);
-}
+.btn-ghost { border-color: var(--line-strong); color: var(--ink); }
 .btn-ghost:hover { border-color: var(--ink); background: var(--panel); }
 
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 1.6em; }
-
-/* ---------------- Hero ---------------- */
-.hero {
-  padding: 88px 0 76px;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.kicker {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--accent-ink);
-  margin-bottom: 1.1em;
-  letter-spacing: 0.02em;
-}
-
-.hero-text h1 {
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
-  margin-bottom: 0.15em;
-}
-
-.hero-role {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.35rem;
-  color: var(--accent-ink);
-  margin-bottom: 0.9em;
-}
-
-.hero-lede {
-  max-width: 54ch;
-  font-size: 1.06rem;
-  color: var(--ink-soft);
-}
-
-.hero-figure { display: flex; justify-content: center; }
-.gantry-svg { width: 100%; max-width: 360px; height: auto; }
-
-.gantry-svg .arc {
-  fill: none;
-  stroke: var(--accent);
-}
-.arc-1 { stroke-width: 1; opacity: 0.25; }
-.arc-2 { stroke-width: 1; opacity: 0.45; stroke-dasharray: 3 7; }
-.arc-3 { stroke-width: 1; opacity: 0.3; }
-.gantry-svg .axis { stroke: var(--line-strong); stroke-width: 1; }
-.gantry-svg .source { fill: var(--warm); }
-.gantry-svg .detector { fill: var(--accent-ink); }
-.gantry-svg .beam { stroke: var(--accent); stroke-width: 1.5; opacity: 0.55; }
-
-.sweep {
-  transform-origin: 210px 210px;
-  animation: sweep 9s ease-in-out infinite;
-}
-@keyframes sweep {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .sweep { animation: none; }
-}
-
-/* ---------------- Section layout ---------------- */
-.section { padding: 84px 0; }
-.section-alt { background: var(--bg-alt); }
-
-.two-col {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-}
-
-.eyebrow-plain {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--ink-faint);
-  margin: 0;
-  position: sticky;
-  top: 90px;
-}
-
-.col-content h2 { margin-bottom: 0.6em; }
-
-/* ---------------- Bio ---------------- */
-.bio-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.bio-photo {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border: 1px solid var(--line-strong);
-  filter: grayscale(20%);
-}
-
-.bio-text p:last-child { margin-bottom: 0; }
-
-/* ---------------- Timeline ---------------- */
-.tl-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 24px;
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
-}
-.tl-item:first-child { border-top: none; padding-top: 0; }
-
-.tl-when {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--accent-ink);
-  white-space: nowrap;
-  padding-top: 0.2em;
-}
-
-.tl-body h3 { font-size: 1.2rem; margin-bottom: 0.2em; }
-.tl-org { color: var(--ink-faint); font-size: 0.92rem; margin-bottom: 0.6em; }
-.tl-body p:last-child { margin-bottom: 0; }
-
-/* ---------------- Ricerca / pubblicazioni ---------------- */
-.thesis-panel {
-  background: var(--accent-soft);
-  border-left: 3px solid var(--accent);
-  padding: 30px 32px;
-  margin-bottom: 52px;
-}
-.thesis-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent-ink);
-  margin-bottom: 0.6em;
-}
-.thesis-panel h3 {
-  font-size: 1.4rem;
-  max-width: 32ch;
-}
-.thesis-meta {
-  color: var(--ink-faint);
-  font-size: 0.92rem;
-  margin-bottom: 1em;
-}
-.thesis-panel p:not(.thesis-label):not(.thesis-meta) { color: var(--ink-soft); }
-
-.link-underline {
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 1px;
-  font-weight: 500;
-}
-.link-underline:hover { border-color: var(--accent-ink); }
-
-.pub-heading {
-  font-size: 1.05rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  color: var(--ink-faint);
-  text-transform: none;
-  margin-top: 44px;
-  margin-bottom: 18px;
-}
-
-.pub-list {
-  list-style: none;
-  margin: 0 0 8px;
-  padding: 0;
-}
-.pub-list li {
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 16px;
-}
-.pub-list li:first-child { border-top: none; }
-
-.pub-cite {
-  margin: 0;
-  color: var(--ink);
-  flex: 1 1 480px;
-}
-.pub-cite em { font-style: italic; color: var(--ink-soft); }
-
-.doi-tag {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--accent-ink);
-  text-decoration: none;
-  background: var(--accent-soft);
-  padding: 4px 9px;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-.doi-tag:hover { background: var(--accent); color: #fff; }
-
-/* ---------------- Consulenze ---------------- */
-.consult-intro {
-  max-width: 62ch;
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-}
-
-.consult-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-
-.consult-card {
-  background: var(--panel);
-  padding: 28px 30px;
-  border-left: 3px solid transparent;
-}
-.consult-teal { border-left-color: var(--accent); }
-.consult-amber { border-left-color: var(--warm); }
-
-.consult-card h3 { font-size: 1.08rem; margin-bottom: 0.5em; }
-.consult-card p { font-size: 0.96rem; margin-bottom: 0; }
-
-.consult-cta {
-  margin-top: 44px;
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-.consult-cta p {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.2rem;
-  color: var(--ink);
-  margin: 0;
-}
-
-/* ---------------- Competenze ---------------- */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 40px;
-}
-.skill-group h4 {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-faint);
-  margin-bottom: 0.4em;
-}
-.skill-group p { margin-bottom: 0; }
-
-/* ---------------- Contatti ---------------- */
-.contact-lede { font-size: 1.1rem; max-width: 46ch; }
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.contact-list a {
-  font-family: var(--font-mono);
-  font-size: 1.02rem;
-  text-decoration: none;
-  color: var(--ink);
-  border-bottom: 1px solid transparent;
-}
-.contact-list a:hover { border-color: var(--accent); color: var(--accent-ink); }
-.contact-location {
-  font-family: var(--font-mono);
-  font-size: 1.02rem;
-  color: var(--ink-faint);
-}
-
 /* ---------------- Footer ---------------- */
-.site-footer {
-  padding: 32px 0;
-  border-top: 1px solid var(--line);
-}
-.site-footer p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--ink-faint);
-}
+.site-footer { padding: 32px 0; border-top: 1px solid var(--line); }
+.site-footer p { margin: 0; font-size: 0.85rem; color: var(--ink-faint); }
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 860px) {
-  .two-col { grid-template-columns: 1fr; gap: 16px; }
-  .eyebrow-plain { position: static; }
-  .bio-grid { grid-template-columns: 1fr; }
-  .bio-photo { max-width: 220px; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-figure { order: -1; max-width: 220px; margin: 0 auto 20px; }
+  .page-layout { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+  .sidebar { position: static; display: flex; flex-direction: column; align-items: flex-start; }
+  .sidebar-gantry { display: none; }
+  .tl-item { grid-template-columns: 1fr; gap: 6px; }
+  .tl-when { padding-top: 0; }
   .consult-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
   .site-nav {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 28px 24px;
-    gap: 16px;
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    flex-direction: column; align-items: flex-start;
+    padding: 16px 28px 24px; gap: 16px;
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
     transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  .site-nav.open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+  .site-nav.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .nav-toggle { display: flex; }
-  .tl-item { grid-template-columns: 1fr; gap: 6px; }
-  .tl-when { padding-top: 0; }
 }
 
 @media (max-width: 520px) {
-  .hero { padding: 56px 0 48px; }
-  .section { padding: 56px 0; }
+  .page-layout { padding: 32px 20px 64px; }
+  .content-section { padding-bottom: 40px; margin-bottom: 40px; }
   body { font-size: 16px; }
 }
-
 </style>
 </head>
 <body>
@@ -646,18 +417,18 @@ html[data-lang="en"] .t-it { display: none; }
 
     <div class="header-right">
       <nav class="site-nav" id="site-nav">
-        <a href="#chi-sono"><span class="t-it">Chi sono</span><span class="t-en">About</span></a>
-        <a href="#percorso"><span class="t-it">Percorso</span><span class="t-en">Experience</span></a>
-        <a href="#ricerca"><span class="t-it">Ricerca</span><span class="t-en">Research</span></a>
-        <a href="#consulenze"><span class="t-it">Consulenze</span><span class="t-en">Consulting</span></a>
-        <a href="#contatti" class="nav-cta"><span class="t-it">Contatti</span><span class="t-en">Contact</span></a>
+        <a href="#about"><span class="t-it">Chi sono</span><span class="t-en">About</span></a>
+        <a href="#experience"><span class="t-it">Percorso</span><span class="t-en">Experience</span></a>
+        <a href="#research"><span class="t-it">Ricerca</span><span class="t-en">Research</span></a>
+        <a href="#consulting"><span class="t-it">Consulenze</span><span class="t-en">Consulting</span></a>
+        <a href="#contact" class="nav-cta"><span class="t-it">Contatti</span><span class="t-en">Contact</span></a>
       </nav>
 
       <div class="header-controls">
         <div class="lang-switch">
           <button type="button" class="lang-current" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
-            <span class="flag" id="langFlag">🇮🇹</span>
-            <span class="lang-code" id="langCode">IT</span>
+            <span class="flag" id="langFlag">🇬🇧</span>
+            <span class="lang-code" id="langCode">EN</span>
             <svg class="lang-caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Lingua / Language">
@@ -680,95 +451,75 @@ html[data-lang="en"] .t-it { display: none; }
 </header>
 
 <main id="main">
+  <a id="top"></a>
+  <div class="page-layout">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <p class="kicker">
-          <span class="t-it">PhD in Bioingegneria &middot; Politecnico di Milano</span>
-          <span class="t-en">PhD in Bioengineering &middot; Politecnico di Milano</span>
-        </p>
-        <h1>Gabriele Belotti</h1>
-        <p class="hero-role">
-          <span class="t-it">Ingegnere software e di sistema per l'imaging a raggi&nbsp;X</span>
-          <span class="t-en">X-ray research software and systems engineer</span>
-        </p>
-        <p class="hero-lede">
-          <span class="t-it">Progetto e porto in produzione il software che sta dietro a un'immagine CBCT affidabile: dalla calibrazione geometrica del sistema alla ricostruzione tomografica, fino al controllo qualità che convince un ente regolatorio. Otto anni tra ricerca clinica e industria dei dispositivi medicali.</span>
-          <span class="t-en">I design and ship the software behind a dependable CBCT image: from the system's geometric calibration to tomographic reconstruction, through to the quality control that convinces a regulatory body. Eight years spanning clinical research and the medical device industry.</span>
-        </p>
-        <div class="hero-actions">
-          <a href="#consulenze" class="btn btn-primary">
-            <span class="t-it">Scopri le consulenze</span>
-            <span class="t-en">Explore consulting services</span>
-          </a>
-          <a href="assets/GabrieleBelottiCV2026.pdf" class="btn btn-ghost" download>
-            <span class="t-it">Scarica il CV</span>
-            <span class="t-en">Download CV</span>
-          </a>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <img src="assets/gabriele.jpg" class="sidebar-photo"
+           data-alt-it="Ritratto di Gabriele Belotti" data-alt-en="Portrait of Gabriele Belotti"
+           alt="Portrait of Gabriele Belotti" width="168" height="168">
+
+      <h1 class="sidebar-name">Gabriele Belotti</h1>
+      <p class="sidebar-tagline">
+        <span class="t-it">Ingegnere software e di sistema per l'imaging a raggi X, specializzato in CBCT e ricostruzione tomografica.</span>
+        <span class="t-en">X-ray research software and systems engineer, working on CBCT imaging and tomographic reconstruction for medical devices.</span>
+      </p>
+
+      <svg viewBox="0 0 210 210" class="sidebar-gantry" aria-hidden="true">
+        <circle cx="105" cy="105" r="98" class="arc arc-1"/>
+        <circle cx="105" cy="105" r="98" class="arc arc-2"/>
+        <circle cx="105" cy="105" r="75" class="arc arc-3"/>
+        <line x1="105" y1="7" x2="105" y2="203" class="axis"/>
+        <line x1="7" y1="105" x2="203" y2="105" class="axis"/>
+        <circle cx="105" cy="7" r="4" class="source"/>
+        <circle cx="105" cy="203" r="3" class="detector"/>
+        <g class="sidebar-sweep"><line x1="105" y1="105" x2="105" y2="7" class="beam"/></g>
+      </svg>
+
+      <hr class="sidebar-divider">
+
+      <p class="sidebar-meta">
+        <span class="t-it">Milano (MI), Italia</span>
+        <span class="t-en">Milan (MI), Italy</span>
+      </p>
+
+      <ul class="sidebar-links">
+        <li><a href="mailto:gabriele.belotti@polimi.it">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/gabriele-belotti-phd/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/GabrieleBelotti" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.researchgate.net/profile/Gabriele-Belotti-2" target="_blank" rel="noopener">ResearchGate</a></li>
+      </ul>
+
+      <a href="assets/GabrieleBelottiCV2026.pdf" class="sidebar-cv" download>
+        <span class="t-it">Scarica il CV</span>
+        <span class="t-en">Download CV</span>
+      </a>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <section class="content-section" id="about">
+        <h2 class="section-heading"><span class="t-it">Chi sono</span><span class="t-en">About</span></h2>
+        <div class="bio-text">
+          <p>
+            <span class="t-it">Sono un ingegnere biomedico specializzato in imaging a raggi X, con un dottorato di ricerca conseguito al Politecnico di Milano sulle tecnologie di guida per immagini in adroterapia. Lavoro all'intersezione tra fisica dell'acquisizione, algoritmi di ricostruzione e software di produzione: il punto in cui un'idea di ricerca deve reggere il confronto con un macchinario clinico reale.</span>
+            <span class="t-en">I'm a biomedical engineer specialising in X-ray imaging, with a PhD from Politecnico di Milano on image guidance technologies for hadron therapy. I work at the intersection of acquisition physics, reconstruction algorithms and production software — the point where a research idea has to hold up against a real clinical machine.</span>
+          </p>
+          <p>
+            <span class="t-it">Negli ultimi anni ho guidato gruppi di ingegneri su sistemi CBCT per uso dentale e clinico, sviluppato e mantenuto codice di ricostruzione tomografica, e curato il controllo qualità dell'immagine secondo standard IEC. Prima ancora, ho progettato da zero un C-arm robotico per la verifica del posizionamento del paziente in adroterapia, dalla calibrazione geometrica alla commissioning clinica.</span>
+            <span class="t-en">In recent years I've led engineering teams on dental and clinical CBCT systems, developed and maintained tomographic reconstruction code, and overseen image quality control to IEC standards. Before that, I designed a robotic C-arm from scratch for patient positioning verification in hadron therapy, from geometric calibration through to clinical commissioning.</span>
+          </p>
+          <p>
+            <span class="t-it">Parlo il linguaggio sia della ricerca — pubblicazioni peer-reviewed, conferenze internazionali — sia dello sviluppo software industriale in C++, Python e CUDA. È una combinazione utile quando un prodotto medicale deve passare dalla dimostrazione di fattibilità alla sala d'esame.</span>
+            <span class="t-en">I speak the language of research — peer-reviewed publications, international conferences — as well as industrial software development in C++, Python and CUDA. It's a useful combination when a medical product has to move from proof of concept to the examination room.</span>
+          </p>
         </div>
-      </div>
-      <div class="hero-figure" aria-hidden="true">
-        <svg viewBox="0 0 420 420" class="gantry-svg">
-          <circle cx="210" cy="210" r="196" class="arc arc-1"/>
-          <circle cx="210" cy="210" r="196" class="arc arc-2"/>
-          <circle cx="210" cy="210" r="150" class="arc arc-3"/>
-          <line x1="210" y1="14" x2="210" y2="406" class="axis"/>
-          <line x1="14" y1="210" x2="406" y2="210" class="axis"/>
-          <circle cx="210" cy="14" r="7" class="source"/>
-          <circle cx="210" cy="406" r="5" class="detector"/>
-          <g class="sweep">
-            <line x1="210" y1="210" x2="210" y2="14" class="beam"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- CHI SONO / ABOUT -->
-  <section class="section" id="chi-sono">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Chi sono</span>
-          <span class="t-en">About</span>
-        </p>
-      </div>
-      <div class="col-content">
-        <div class="bio-grid">
-          <img src="assets/gabriele.jpg" class="bio-photo" width="320" height="320"
-               data-alt-it="Ritratto di Gabriele Belotti" data-alt-en="Portrait of Gabriele Belotti"
-               alt="Ritratto di Gabriele Belotti">
-          <div class="bio-text">
-            <p>
-              <span class="t-it">Sono un ingegnere biomedico specializzato in imaging a raggi X, con un dottorato di ricerca conseguito al Politecnico di Milano sulle tecnologie di guida per immagini in adroterapia. Lavoro all'intersezione tra fisica dell'acquisizione, algoritmi di ricostruzione e software di produzione: il punto in cui un'idea di ricerca deve reggere il confronto con un macchinario clinico reale.</span>
-              <span class="t-en">I'm a biomedical engineer specialising in X-ray imaging, with a PhD from Politecnico di Milano on image guidance technologies for hadron therapy. I work at the intersection of acquisition physics, reconstruction algorithms and production software — the point where a research idea has to hold up against a real clinical machine.</span>
-            </p>
-            <p>
-              <span class="t-it">Negli ultimi anni ho guidato gruppi di ingegneri su sistemi CBCT per uso dentale e clinico, sviluppato e mantenuto codice di ricostruzione tomografica, e curato il controllo qualità dell'immagine secondo standard IEC. Prima ancora, ho progettato da zero un C-arm robotico per la verifica del posizionamento del paziente in adroterapia, dalla calibrazione geometrica alla commissioning clinica.</span>
-              <span class="t-en">In recent years I've led engineering teams on dental and clinical CBCT systems, developed and maintained tomographic reconstruction code, and overseen image quality control to IEC standards. Before that, I designed a robotic C-arm from scratch for patient positioning verification in hadron therapy, from geometric calibration through to clinical commissioning.</span>
-            </p>
-            <p>
-              <span class="t-it">Parlo il linguaggio sia della ricerca — pubblicazioni peer-reviewed, conferenze internazionali — sia dello sviluppo software industriale in C++, Python e CUDA. È una combinazione utile quando un prodotto medicale deve passare dalla dimostrazione di fattibilità alla sala d'esame.</span>
-              <span class="t-en">I speak the language of research — peer-reviewed publications, international conferences — as well as industrial software development in C++, Python and CUDA. It's a useful combination when a medical product has to move from proof of concept to the examination room.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERCORSO / EXPERIENCE -->
-  <section class="section section-alt" id="percorso">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Percorso professionale</span>
-          <span class="t-en">Experience</span>
-        </p>
-      </div>
-      <div class="col-content">
+      <section class="content-section" id="experience">
+        <h2 class="section-heading"><span class="t-it">Percorso professionale</span><span class="t-en">Experience</span></h2>
 
         <article class="tl-item">
           <div class="tl-when"><span class="t-it">2025 — oggi</span><span class="t-en">2025 — present</span></div>
@@ -829,21 +580,10 @@ html[data-lang="en"] .t-it { display: none; }
             </p>
           </div>
         </article>
+      </section>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- RICERCA / RESEARCH -->
-  <section class="section" id="ricerca">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Ricerca e pubblicazioni</span>
-          <span class="t-en">Research and publications</span>
-        </p>
-      </div>
-      <div class="col-content">
+      <section class="content-section" id="research">
+        <h2 class="section-heading"><span class="t-it">Ricerca e pubblicazioni</span><span class="t-en">Research and publications</span></h2>
 
         <div class="thesis-panel">
           <p class="thesis-label">
@@ -900,22 +640,11 @@ html[data-lang="en"] .t-it { display: none; }
             <a class="doi-tag" href="https://doi.org/10.1117/12.2646384" target="_blank" rel="noopener">DOI: 10.1117/12.2646384</a>
           </li>
         </ul>
+      </section>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- CONSULENZE / CONSULTING -->
-  <section class="section section-consult" id="consulenze">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Consulenze</span>
-          <span class="t-en">Consulting</span>
-        </p>
-      </div>
-      <div class="col-content">
-        <p class="consult-intro">
+      <section class="content-section" id="consulting">
+        <h2 class="section-heading"><span class="t-it">Consulenze</span><span class="t-en">Consulting</span></h2>
+        <p class="lede">
           <span class="t-it">Offro consulenza mirata ad aziende e centri di ricerca che sviluppano sistemi di imaging a raggi X — dalla definizione del problema al codice che finisce in produzione. Progetti a termine o affiancamento continuativo, a seconda di cosa serve.</span>
           <span class="t-en">I offer focused consulting to companies and research centres developing X-ray imaging systems — from framing the problem to the code that ends up in production. Fixed-term projects or ongoing support, depending on what's needed.</span>
         </p>
@@ -970,25 +699,15 @@ html[data-lang="en"] .t-it { display: none; }
             <span class="t-it">Hai in mente un problema di imaging che vale la pena discutere?</span>
             <span class="t-en">Got an imaging problem worth discussing?</span>
           </p>
-          <a href="#contatti" class="btn btn-primary">
+          <a href="#contact" class="btn btn-primary">
             <span class="t-it">Parliamone</span>
             <span class="t-en">Let's talk</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- COMPETENZE / SKILLS -->
-  <section class="section" id="competenze">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Competenze tecniche</span>
-          <span class="t-en">Technical skills</span>
-        </p>
-      </div>
-      <div class="col-content">
+      <section class="content-section" id="skills">
+        <h2 class="section-heading"><span class="t-it">Competenze tecniche</span><span class="t-en">Technical skills</span></h2>
         <div class="skills-grid">
           <div class="skill-group">
             <h4><span class="t-it">Linguaggi &amp; sviluppo</span><span class="t-en">Development</span></h4>
@@ -1013,38 +732,24 @@ html[data-lang="en"] .t-it { display: none; }
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- CONTATTI / CONTACT -->
-  <section class="section section-alt" id="contatti">
-    <div class="wrap two-col">
-      <div class="col-label">
-        <p class="eyebrow-plain">
-          <span class="t-it">Contatti</span>
-          <span class="t-en">Contact</span>
-        </p>
-      </div>
-      <div class="col-content">
-        <p class="contact-lede">
-          <span class="t-it">Scrivimi per una consulenza, una collaborazione o semplicemente per parlare di CBCT e tecnologia.</span>
-          <span class="t-en">Get in touch for a consulting engagement, a collaboration, or just to talk about CBCT and technologies.</span>
-        </p>
-        <ul class="contact-list">
-          <li><a href="mailto:gabriele.belotti@polimi.it">gabriele.belotti@polimi.it</a></li>
-          <li><a href="https://www.linkedin.com/in/gabriele-belotti-phd/" target="_blank" rel="noopener">linkedin.com/in/gabriele-belotti-phd</a></li>
-          <li><a href="https://github.com/GabrieleBelotti" target="_blank" rel="noopener">github.com/GabrieleBelotti</a></li>
-          <li><a href="https://www.researchgate.net/profile/Gabriele-Belotti-2" target="_blank" rel="noopener">researchgate.net/profile/Gabriele-Belotti-2</a></li>
-          <li class="contact-location">
-            <span class="t-it">Milano (MI), Italia</span>
-            <span class="t-en">Milan (MI), Italy</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <section class="content-section" id="contact">
+        <h2 class="section-heading"><span class="t-it">Contatti</span><span class="t-en">Contact</span></h2>
+        <div class="contact-cta">
+          <p>
+            <span class="t-it">Scrivimi per una consulenza, una collaborazione o semplicemente per parlare di CBCT e tecnologia. I contatti e i profili sono nella barra laterale.</span>
+            <span class="t-en">Get in touch for a consulting engagement, a collaboration, or just to talk about CBCT and technologies. Contact details and profiles are in the sidebar.</span>
+          </p>
+          <a href="mailto:gabriele.belotti@polimi.it" class="btn btn-primary">
+            <span class="t-it">Scrivimi</span>
+            <span class="t-en">Email me</span>
+          </a>
+        </div>
+      </section>
 
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -1097,7 +802,7 @@ const langCode = document.getElementById('langCode');
 const metaDescription = document.querySelector('meta[name="description"]');
 
 function applyLang(lang) {
-  if (lang !== 'it' && lang !== 'en') lang = 'it';
+  if (lang !== 'it' && lang !== 'en') lang = 'en';
 
   document.documentElement.setAttribute('lang', lang);
   document.documentElement.setAttribute('data-lang', lang);
@@ -1150,9 +855,8 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLangMenu();
 });
 
-/* Sync UI with whatever the blocking head-script already set on <html> */
-applyLang(document.documentElement.getAttribute('data-lang') || 'it');
-
+/* Sync UI with whatever the blocking head-script already set on <html> (defaults to English) */
+applyLang(document.documentElement.getAttribute('data-lang') || 'en');
 </script>
 </body>
 </html>
