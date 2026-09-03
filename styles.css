@@ -184,6 +184,13 @@ html[data-lang="en"] .t-it { display: none; }
 .tl-org { color: var(--ink-faint); font-size: 0.92rem; margin-bottom: 0.6em; }
 .tl-body p:last-child { margin-bottom: 0; }
 
+/* Key topics */
+.topic-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.topic-list li {
+  font-family: var(--font-mono); font-size: 0.83rem; color: var(--accent-ink);
+  background: var(--accent-soft); padding: 7px 12px; border-radius: 3px; line-height: 1.3;
+}
+
 /* Research */
 .thesis-panel { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 26px 28px; margin-bottom: 44px; }
 .thesis-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-ink); margin-bottom: 0.6em; }
@@ -206,6 +213,7 @@ html[data-lang="en"] .t-it { display: none; }
 
 /* Consulting */
 .consult-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.consult-grid .consult-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .consult-card { background: var(--panel); padding: 24px 26px; border-left: 3px solid transparent; }
 .consult-teal { border-left-color: var(--accent); }
 .consult-amber { border-left-color: var(--warm); }
