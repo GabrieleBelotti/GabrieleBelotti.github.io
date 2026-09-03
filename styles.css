@@ -87,6 +87,10 @@ a { color: var(--accent-ink); }
   outline-offset: 3px;
 }
 
+/* ---------------- Language toggling ---------------- */
+html[data-lang="it"] .t-en { display: none; }
+html[data-lang="en"] .t-it { display: none; }
+
 /* ---------------- Header ---------------- */
 .site-header {
   position: sticky;
@@ -113,6 +117,12 @@ a { color: var(--accent-ink); }
   letter-spacing: 0.01em;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -133,6 +143,12 @@ a { color: var(--accent-ink); }
   padding-bottom: 2px;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -150,6 +166,77 @@ a { color: var(--accent-ink); }
   height: 2px;
   background: var(--ink);
 }
+
+/* ---------------- Language switch ---------------- */
+.lang-switch {
+  position: relative;
+}
+
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  padding: 7px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.lang-current:hover { border-color: var(--ink); }
+
+.lang-current .flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-caret {
+  width: 9px;
+  height: 6px;
+  color: var(--ink-faint);
+  transition: transform 0.15s ease;
+}
+.lang-current[aria-expanded="true"] .lang-caret { transform: rotate(180deg); }
+
+.lang-menu {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(20, 32, 43, 0.08);
+  z-index: 60;
+  display: none;
+}
+.lang-menu.open { display: block; }
+
+.lang-menu li { margin: 0; }
+
+.lang-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.lang-menu button:hover { background: var(--bg-alt); }
+.lang-menu button .flag { font-size: 1.05rem; }
+.lang-menu li[aria-selected="true"] button { color: var(--accent-ink); font-weight: 500; }
 
 /* ---------------- Buttons ---------------- */
 .btn {

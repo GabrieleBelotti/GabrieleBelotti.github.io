@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gabriele Belotti, PhD — X-ray research software &amp; systems engineer</title>
+<script>
+  /* Applica subito la lingua salvata, prima del paint, per evitare sfarfallii */
+  (function () {
+    try {
+      var saved = localStorage.getItem('gb-site-lang');
+      var lang = saved || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+    } catch (e) {}
+  })();
+</script>
+<title>Gabriele Belotti, PhD — Ingegnere software e di sistema per l'imaging a raggi X</title>
 <meta name="description" content="Gabriele Belotti, PhD in Bioingegneria — ingegnere software e di sistema per imaging a raggi X, CBCT e ricostruzione tomografica. Consulenze per aziende del settore medicale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,22 +23,46 @@
 </head>
 <body>
 
-<div class="skip-link"><a href="#main">Vai al contenuto</a></div>
+<div class="skip-link">
+  <a href="#main"><span class="t-it">Vai al contenuto</span><span class="t-en">Skip to content</span></a>
+</div>
 
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#top" class="brand">Gabriele Belotti</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" id="navToggle">
-      <span></span><span></span><span></span>
-      <span class="sr-only">Menu</span>
-    </button>
-    <nav class="site-nav" id="site-nav">
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#percorso">Percorso</a>
-      <a href="#ricerca">Ricerca</a>
-      <a href="#consulenze">Consulenze</a>
-      <a href="#contatti" class="nav-cta">Contatti</a>
-    </nav>
+
+    <div class="header-right">
+      <nav class="site-nav" id="site-nav">
+        <a href="#chi-sono"><span class="t-it">Chi sono</span><span class="t-en">About</span></a>
+        <a href="#percorso"><span class="t-it">Percorso</span><span class="t-en">Experience</span></a>
+        <a href="#ricerca"><span class="t-it">Ricerca</span><span class="t-en">Research</span></a>
+        <a href="#consulenze"><span class="t-it">Consulenze</span><span class="t-en">Consulting</span></a>
+        <a href="#contatti" class="nav-cta"><span class="t-it">Contatti</span><span class="t-en">Contact</span></a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="lang-switch">
+          <button type="button" class="lang-current" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="flag" id="langFlag">🇮🇹</span>
+            <span class="lang-code" id="langCode">IT</span>
+            <svg class="lang-caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Lingua / Language">
+            <li role="option" data-value="it">
+              <button type="button" data-lang-choice="it"><span class="flag">🇮🇹</span> Italiano</button>
+            </li>
+            <li role="option" data-value="en">
+              <button type="button" data-lang-choice="en"><span class="flag">🇬🇧</span> English</button>
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" id="navToggle">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -37,13 +72,28 @@
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <p class="kicker">PhD in Bioingegneria &middot; Politecnico di Milano</p>
+        <p class="kicker">
+          <span class="t-it">PhD in Bioingegneria &middot; Politecnico di Milano</span>
+          <span class="t-en">PhD in Bioengineering &middot; Politecnico di Milano</span>
+        </p>
         <h1>Gabriele Belotti</h1>
-        <p class="hero-role">Ingegnere software e di sistema per l'imaging a raggi&nbsp;X</p>
-        <p class="hero-lede">Progetto e porto in produzione il software che sta dietro a un'immagine CBCT affidabile: dalla calibrazione geometrica del sistema alla ricostruzione tomografica, fino al controllo qualità che convince un ente regolatorio. Otto anni tra ricerca clinica e industria dei dispositivi medicali.</p>
+        <p class="hero-role">
+          <span class="t-it">Ingegnere software e di sistema per l'imaging a raggi&nbsp;X</span>
+          <span class="t-en">X-ray research software and systems engineer</span>
+        </p>
+        <p class="hero-lede">
+          <span class="t-it">Progetto e porto in produzione il software che sta dietro a un'immagine CBCT affidabile: dalla calibrazione geometrica del sistema alla ricostruzione tomografica, fino al controllo qualità che convince un ente regolatorio. Otto anni tra ricerca clinica e industria dei dispositivi medicali.</span>
+          <span class="t-en">I design and ship the software behind a dependable CBCT image: from the system's geometric calibration to tomographic reconstruction, through to the quality control that convinces a regulatory body. Eight years spanning clinical research and the medical device industry.</span>
+        </p>
         <div class="hero-actions">
-          <a href="#consulenze" class="btn btn-primary">Scopri le consulenze</a>
-          <a href="assets/GabrieleBelottiCV2026.pdf" class="btn btn-ghost" download>Scarica il CV</a>
+          <a href="#consulenze" class="btn btn-primary">
+            <span class="t-it">Scopri le consulenze</span>
+            <span class="t-en">Explore consulting services</span>
+          </a>
+          <a href="assets/GabrieleBelottiCV2026.pdf" class="btn btn-ghost" download>
+            <span class="t-it">Scarica il CV</span>
+            <span class="t-en">Download CV</span>
+          </a>
         </div>
       </div>
       <div class="hero-figure" aria-hidden="true">
@@ -63,39 +113,59 @@
     </div>
   </section>
 
-  <!-- CHI SONO -->
+  <!-- CHI SONO / ABOUT -->
   <section class="section" id="chi-sono">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Chi sono</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Chi sono</span>
+          <span class="t-en">About</span>
+        </p>
       </div>
       <div class="col-content">
         <div class="bio-grid">
-          <img src="assets/gabriele.jpg" alt="Ritratto di Gabriele Belotti" class="bio-photo" width="320" height="320">
+          <img src="assets/gabriele.jpg" class="bio-photo" width="320" height="320"
+               data-alt-it="Ritratto di Gabriele Belotti" data-alt-en="Portrait of Gabriele Belotti"
+               alt="Ritratto di Gabriele Belotti">
           <div class="bio-text">
-            <p>Sono un ingegnere biomedico specializzato in imaging a raggi X, con un dottorato di ricerca conseguito al Politecnico di Milano sulle tecnologie di guida per immagini in adroterapia. Lavoro all'intersezione tra fisica dell'acquisizione, algoritmi di ricostruzione e software di produzione: il punto in cui un'idea di ricerca deve reggere il confronto con un macchinario clinico reale.</p>
-            <p>Negli ultimi anni ho guidato gruppi di ingegneri su sistemi CBCT per uso dentale e clinico, sviluppato e mantenuto codice di ricostruzione tomografica, e curato il controllo qualità dell'immagine secondo standard IEC. Prima ancora, ho progettato da zero un C-arm robotico per la verifica del posizionamento del paziente in adroterapia, dalla calibrazione geometrica alla commissioning clinica.</p>
-            <p>Parlo il linguaggio sia della ricerca — pubblicazioni peer-reviewed, conferenze internazionali — sia dello sviluppo software industriale in C++, Python e CUDA. È una combinazione utile quando un prodotto medicale deve passare dalla dimostrazione di fattibilità alla sala d'esame.</p>
+            <p>
+              <span class="t-it">Sono un ingegnere biomedico specializzato in imaging a raggi X, con un dottorato di ricerca conseguito al Politecnico di Milano sulle tecnologie di guida per immagini in adroterapia. Lavoro all'intersezione tra fisica dell'acquisizione, algoritmi di ricostruzione e software di produzione: il punto in cui un'idea di ricerca deve reggere il confronto con un macchinario clinico reale.</span>
+              <span class="t-en">I'm a biomedical engineer specialising in X-ray imaging, with a PhD from Politecnico di Milano on image guidance technologies for hadron therapy. I work at the intersection of acquisition physics, reconstruction algorithms and production software — the point where a research idea has to hold up against a real clinical machine.</span>
+            </p>
+            <p>
+              <span class="t-it">Negli ultimi anni ho guidato gruppi di ingegneri su sistemi CBCT per uso dentale e clinico, sviluppato e mantenuto codice di ricostruzione tomografica, e curato il controllo qualità dell'immagine secondo standard IEC. Prima ancora, ho progettato da zero un C-arm robotico per la verifica del posizionamento del paziente in adroterapia, dalla calibrazione geometrica alla commissioning clinica.</span>
+              <span class="t-en">In recent years I've led engineering teams on dental and clinical CBCT systems, developed and maintained tomographic reconstruction code, and overseen image quality control to IEC standards. Before that, I designed a robotic C-arm from scratch for patient positioning verification in hadron therapy, from geometric calibration through to clinical commissioning.</span>
+            </p>
+            <p>
+              <span class="t-it">Parlo il linguaggio sia della ricerca — pubblicazioni peer-reviewed, conferenze internazionali — sia dello sviluppo software industriale in C++, Python e CUDA. È una combinazione utile quando un prodotto medicale deve passare dalla dimostrazione di fattibilità alla sala d'esame.</span>
+              <span class="t-en">I speak the language of research — peer-reviewed publications, international conferences — as well as industrial software development in C++, Python and CUDA. It's a useful combination when a medical product has to move from proof of concept to the examination room.</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PERCORSO -->
+  <!-- PERCORSO / EXPERIENCE -->
   <section class="section section-alt" id="percorso">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Percorso professionale</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Percorso professionale</span>
+          <span class="t-en">Experience</span>
+        </p>
       </div>
       <div class="col-content">
 
         <article class="tl-item">
-          <div class="tl-when">2025 — oggi</div>
+          <div class="tl-when"><span class="t-it">2025 — oggi</span><span class="t-en">2025 — present</span></div>
           <div class="tl-body">
             <h3>X-Ray Image-Processing / Software Engineer</h3>
             <p class="tl-org">Cefla s.c. &middot; Imola</p>
-            <p>Assicurazione della qualità immagine su macchine CBCT dentali e cliniche: parametrizzazione di algoritmi, analisi di dati fantoccio e clinici, controllo dell'esposizione e validazione geometrica. Debug post-vendita, test di accettazione in produzione, controllo qualità dei rivelatori flat panel secondo standard IEC. Design funzionale, coordinamento cross-team e manutenzione del codice tomografico legacy per la suite Neowise.</p>
+            <p>
+              <span class="t-it">Assicurazione della qualità immagine su macchine CBCT dentali e cliniche: parametrizzazione di algoritmi, analisi di dati fantoccio e clinici, controllo dell'esposizione e validazione geometrica. Debug post-vendita, test di accettazione in produzione, controllo qualità dei rivelatori flat panel secondo standard IEC. Design funzionale, coordinamento cross-team e manutenzione del codice tomografico legacy per la suite Neowise.</span>
+              <span class="t-en">Image quality assurance on dental and clinical CBCT machines: algorithm parametrisation, phantom and clinical data analysis, exposure control and geometrical validation. After-sales debugging, production acceptance testing, and flat panel detector quality control to IEC standards. Functional design, cross-team coordination, and maintenance of legacy tomographic code for the Neowise suite.</span>
+            </p>
           </div>
         </article>
 
@@ -103,17 +173,23 @@
           <div class="tl-when">2023 — 2024</div>
           <div class="tl-body">
             <h3>X-Ray Tomographic Reconstruction Software Engineer</h3>
-            <p class="tl-org">medPhoton &middot; Salisburgo</p>
-            <p>Responsabile dell'Imaging Core Group, un team interdisciplinare di 15 persone dedicato alla risoluzione dei problemi di qualità immagine. Progettazione di soluzioni hardware/software allo stato dell'arte; attività sperimentali su tracking ottico, calibrazione flexmap, controllo automatico dell'esposizione e navigazione robotica di sala. Guida dello sviluppo del codice tomografico (~5 persone) e responsabilità della documentazione software per il modulo CBCT.</p>
+            <p class="tl-org">medPhoton &middot; <span class="t-it">Salisburgo</span><span class="t-en">Salzburg</span></p>
+            <p>
+              <span class="t-it">Responsabile dell'Imaging Core Group, un team interdisciplinare di 15 persone dedicato alla risoluzione dei problemi di qualità immagine. Progettazione di soluzioni hardware/software allo stato dell'arte; attività sperimentali su tracking ottico, calibrazione flexmap, controllo automatico dell'esposizione e navigazione robotica di sala. Guida dello sviluppo del codice tomografico (~5 persone) e responsabilità della documentazione software per il modulo CBCT.</span>
+              <span class="t-en">Head of the Imaging Core Group, a 15-person interdisciplinary team responsible for resolving image quality issues. Design of state-of-the-art hardware/software solutions; experimental work on optical tracking, flexmap calibration, automatic exposure control and in-room robotic navigation. Led tomographic code development (~5 people) and owned software documentation for the CBCT module.</span>
+            </p>
           </div>
         </article>
 
         <article class="tl-item">
           <div class="tl-when">2019 — 2023</div>
           <div class="tl-body">
-            <h3>Ricercatore in Radioterapia Computer-Assistita</h3>
-            <p class="tl-org">Politecnico di Milano &middot; Milano</p>
-            <p>Design e sviluppo di un C-arm robotico custom per l'imaging in sala nel centro di adroterapia CNAO. Sviluppo full-stack in C++ della suite di verifica del posizionamento paziente, calibrazione geometrica a 9 gradi di libertà (approccio flexmap), integrazione con l'infrastruttura di sala e commissioning clinica dello strumento. Ricostruzione tomografica in geometria cone-beam e presentazione orale al CT-meeting 2022.</p>
+            <h3><span class="t-it">Ricercatore in Radioterapia Computer-Assistita</span><span class="t-en">Researcher in Computer-Aided Radiation Therapy</span></h3>
+            <p class="tl-org">Politecnico di Milano &middot; <span class="t-it">Milano</span><span class="t-en">Milan</span></p>
+            <p>
+              <span class="t-it">Design e sviluppo di un C-arm robotico custom per l'imaging in sala nel centro di adroterapia CNAO. Sviluppo full-stack in C++ della suite di verifica del posizionamento paziente, calibrazione geometrica a 9 gradi di libertà (approccio flexmap), integrazione con l'infrastruttura di sala e commissioning clinica dello strumento. Ricostruzione tomografica in geometria cone-beam e presentazione orale al CT-meeting 2022.</span>
+              <span class="t-en">Design and development of a custom robotic C-arm for in-room imaging at the CNAO hadron therapy centre. Full-stack C++ development of the patient positioning verification suite, 9-degree-of-freedom geometric calibration (flexmap approach), integration with the treatment room infrastructure, and clinical commissioning of the instrument. Cone-beam tomographic reconstruction and an oral presentation at CT-meeting 2022.</span>
+            </p>
           </div>
         </article>
 
@@ -121,17 +197,23 @@
           <div class="tl-when">2021 — 2022</div>
           <div class="tl-body">
             <h3>Visiting PhD Researcher</h3>
-            <p class="tl-org">INSA Lyon &middot; CREATIS lab, Lione</p>
-            <p>Simulazioni Monte Carlo per il trasporto di particelle in CBCT, calcolo distribuito su piattaforma Slurm (in2p3), simulazione e correzione dello scatter. Contributi open source ai progetti RTK e OpenGATE.</p>
+            <p class="tl-org">INSA Lyon &middot; CREATIS lab, <span class="t-it">Lione</span><span class="t-en">Lyon</span></p>
+            <p>
+              <span class="t-it">Simulazioni Monte Carlo per il trasporto di particelle in CBCT, calcolo distribuito su piattaforma Slurm (in2p3), simulazione e correzione dello scatter. Contributi open source ai progetti RTK e OpenGATE.</span>
+              <span class="t-en">Monte Carlo simulations of particle transport in CBCT, distributed computing on a Slurm platform (in2p3), scatter simulation and correction. Open-source contributions to the RTK and OpenGATE projects.</span>
+            </p>
           </div>
         </article>
 
         <article class="tl-item">
           <div class="tl-when">2017 — 2018</div>
           <div class="tl-body">
-            <h3>Internship — Research Engineer</h3>
-            <p class="tl-org">ICube Lab &middot; Strasburgo</p>
-            <p>Imaging a raggi X, computer vision e robotica per radiologia interventistica robot-assistita, con sviluppo in C++ e MATLAB.</p>
+            <h3><span class="t-it">Tirocinio</span><span class="t-en">Internship</span> — Research Engineer</h3>
+            <p class="tl-org">ICube Lab &middot; <span class="t-it">Strasburgo</span><span class="t-en">Strasbourg</span></p>
+            <p>
+              <span class="t-it">Imaging a raggi X, computer vision e robotica per radiologia interventistica robot-assistita, con sviluppo in C++ e MATLAB.</span>
+              <span class="t-en">X-ray imaging, computer vision and robotics for robot-assisted interventional radiology, with development in C++ and MATLAB.</span>
+            </p>
           </div>
         </article>
 
@@ -139,23 +221,38 @@
     </div>
   </section>
 
-  <!-- RICERCA -->
+  <!-- RICERCA / RESEARCH -->
   <section class="section" id="ricerca">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Ricerca e pubblicazioni</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Ricerca e pubblicazioni</span>
+          <span class="t-en">Research and publications</span>
+        </p>
       </div>
       <div class="col-content">
 
         <div class="thesis-panel">
-          <p class="thesis-label">Tesi di dottorato &middot; cum laude</p>
+          <p class="thesis-label">
+            <span class="t-it">Tesi di dottorato &middot; cum laude</span>
+            <span class="t-en">PhD thesis &middot; cum laude</span>
+          </p>
           <h3>Development of Technologies for In-Room Image Guidance in Hadron Therapy</h3>
-          <p class="thesis-meta">Politecnico di Milano &middot; Novembre 2019 – Marzo 2024 &middot; Relatore: Prof. Guido Baroni</p>
-          <p>Sei capitoli dedicati alla progettazione, calibrazione e validazione clinica di un sistema di imaging in sala per l'adroterapia: dall'estensione del campo di vista in geometria cone-beam alle strategie di imaging 4D correlate al respiro, fino alle tecniche di deep learning per la riduzione degli artefatti nella CBCT.</p>
-          <a href="https://www.politesi.polimi.it/retrieve/1e3e95e6-83ec-4a91-a763-a24726f56e77/phd_thesis_Gabriele_Belotti.pdf" class="link-underline" target="_blank" rel="noopener">Leggi la tesi integrale (PDF, Politesi — Politecnico di Milano)</a>
+          <p class="thesis-meta">
+            <span class="t-it">Politecnico di Milano &middot; Novembre 2019 – Marzo 2024 &middot; Relatore: Prof. Guido Baroni</span>
+            <span class="t-en">Politecnico di Milano &middot; November 2019 – March 2024 &middot; Supervisor: Prof. Guido Baroni</span>
+          </p>
+          <p>
+            <span class="t-it">Sei capitoli dedicati alla progettazione, calibrazione e validazione clinica di un sistema di imaging in sala per l'adroterapia: dall'estensione del campo di vista in geometria cone-beam alle strategie di imaging 4D correlate al respiro, fino alle tecniche di deep learning per la riduzione degli artefatti nella CBCT.</span>
+            <span class="t-en">Six chapters on the design, calibration and clinical validation of an in-room imaging system for hadron therapy: from field-of-view extension in cone-beam geometry to breathing-correlated 4D imaging strategies, through to deep learning techniques for artefact reduction in CBCT.</span>
+          </p>
+          <a href="https://www.politesi.polimi.it/retrieve/1e3e95e6-83ec-4a91-a763-a24726f56e77/phd_thesis_Gabriele_Belotti.pdf" class="link-underline" target="_blank" rel="noopener">
+            <span class="t-it">Leggi la tesi integrale (PDF, Politesi — Politecnico di Milano)</span>
+            <span class="t-en">Read the full thesis (PDF, Politesi — Politecnico di Milano)</span>
+          </a>
         </div>
 
-        <h3 class="pub-heading">Articoli su rivista</h3>
+        <h3 class="pub-heading"><span class="t-it">Articoli su rivista</span><span class="t-en">Journal articles</span></h3>
         <ul class="pub-list">
           <li>
             <p class="pub-cite">Belotti, G., Fattori, G., Baroni, G., Rit, S. (2024). Extension of the cone-beam CT field-of-view using two complementary short scans. <em>Medical Physics</em>, 51(5), 3391–3404.</p>
@@ -183,7 +280,7 @@
           </li>
         </ul>
 
-        <h3 class="pub-heading">Atti di conferenza</h3>
+        <h3 class="pub-heading"><span class="t-it">Atti di conferenza</span><span class="t-en">Conference proceedings</span></h3>
         <ul class="pub-list">
           <li>
             <p class="pub-cite">Belotti, G., Rit, S., Baroni, G. (2022). Extension of the cone-beam CT field-of-view using two short scans with displaced centers of rotation. <em>Seventh International Conference on Image Formation in X-Ray Computed Tomography (XCT22)</em>, SPIE, 12304.</p>
@@ -195,92 +292,142 @@
     </div>
   </section>
 
-  <!-- CONSULENZE -->
+  <!-- CONSULENZE / CONSULTING -->
   <section class="section section-consult" id="consulenze">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Consulenze</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Consulenze</span>
+          <span class="t-en">Consulting</span>
+        </p>
       </div>
       <div class="col-content">
-        <p class="consult-intro">Offro consulenza mirata ad aziende e centri di ricerca che sviluppano sistemi di imaging a raggi X — dalla definizione del problema al codice che finisce in produzione. Progetti a termine o affiancamento continuativo, a seconda di cosa serve.</p>
+        <p class="consult-intro">
+          <span class="t-it">Offro consulenza mirata ad aziende e centri di ricerca che sviluppano sistemi di imaging a raggi X — dalla definizione del problema al codice che finisce in produzione. Progetti a termine o affiancamento continuativo, a seconda di cosa serve.</span>
+          <span class="t-en">I offer focused consulting to companies and research centres developing X-ray imaging systems — from framing the problem to the code that ends up in production. Fixed-term projects or ongoing support, depending on what's needed.</span>
+        </p>
 
         <div class="consult-grid">
           <div class="consult-card consult-teal">
-            <h3>Qualità immagine e validazione CBCT</h3>
-            <p>Parametrizzazione di algoritmi di qualità immagine, analisi su fantoccio e dati clinici, confronto e controllo qualità di rivelatori flat panel secondo standard IEC. Utile in fase di verifica pre-rilascio o di indagine su anomalie riscontrate in campo.</p>
+            <h3><span class="t-it">Qualità immagine e validazione CBCT</span><span class="t-en">Image quality and CBCT validation</span></h3>
+            <p>
+              <span class="t-it">Parametrizzazione di algoritmi di qualità immagine, analisi su fantoccio e dati clinici, confronto e controllo qualità di rivelatori flat panel secondo standard IEC. Utile in fase di verifica pre-rilascio o di indagine su anomalie riscontrate in campo.</span>
+              <span class="t-en">Parametrisation of image quality algorithms, phantom and clinical data analysis, and flat panel detector comparison and quality control to IEC standards. Useful for pre-release verification or investigating anomalies reported in the field.</span>
+            </p>
           </div>
           <div class="consult-card consult-amber">
-            <h3>Ricostruzione tomografica</h3>
-            <p>Progettazione, ottimizzazione e refactoring di pipeline di ricostruzione cone-beam, incluse strategie per l'estensione del campo di vista e la correzione dello scatter. Esperienza diretta su RTK, ITK/VTK e implementazioni custom in C++/CUDA.</p>
+            <h3><span class="t-it">Ricostruzione tomografica</span><span class="t-en">Tomographic reconstruction</span></h3>
+            <p>
+              <span class="t-it">Progettazione, ottimizzazione e refactoring di pipeline di ricostruzione cone-beam, incluse strategie per l'estensione del campo di vista e la correzione dello scatter. Esperienza diretta su RTK, ITK/VTK e implementazioni custom in C++/CUDA.</span>
+              <span class="t-en">Design, optimisation and refactoring of cone-beam reconstruction pipelines, including field-of-view extension strategies and scatter correction. Hands-on experience with RTK, ITK/VTK and custom C++/CUDA implementations.</span>
+            </p>
           </div>
           <div class="consult-card consult-teal">
-            <h3>Calibrazione geometrica di sistemi robotici</h3>
-            <p>Calibrazione flexmap e verifica geometrica di sistemi con sorgente e rivelatore mobili — dalla progettazione del protocollo di test alla validazione in Factory Acceptance Test.</p>
+            <h3><span class="t-it">Calibrazione geometrica di sistemi robotici</span><span class="t-en">Geometric calibration of robotic systems</span></h3>
+            <p>
+              <span class="t-it">Calibrazione flexmap e verifica geometrica di sistemi con sorgente e rivelatore mobili — dalla progettazione del protocollo di test alla validazione in Factory Acceptance Test.</span>
+              <span class="t-en">Flexmap calibration and geometric verification of systems with moving source and detector — from designing the test protocol through to Factory Acceptance Test validation.</span>
+            </p>
           </div>
           <div class="consult-card consult-amber">
-            <h3>Simulazione Monte Carlo</h3>
-            <p>Simulazioni di trasporto di raggi X e particelle con Geant4/OpenGATE per la progettazione di sistemi di imaging, lo studio dello scatter e la generazione di dati sintetici per l'addestramento di modelli.</p>
+            <h3><span class="t-it">Simulazione Monte Carlo</span><span class="t-en">Monte Carlo simulation</span></h3>
+            <p>
+              <span class="t-it">Simulazioni di trasporto di raggi X e particelle con Geant4/OpenGATE per la progettazione di sistemi di imaging, lo studio dello scatter e la generazione di dati sintetici per l'addestramento di modelli.</span>
+              <span class="t-en">X-ray and particle transport simulations with Geant4/OpenGATE for imaging system design, scatter studies, and synthetic data generation for model training.</span>
+            </p>
           </div>
           <div class="consult-card consult-teal">
-            <h3>Sviluppo software per dispositivi medicali</h3>
-            <p>Requisiti e design funzionale, implementazione back-end in C++/Python, gestione dati DICOM, integrazione continua e coordinamento cross-team per software destinato a un contesto clinico regolamentato.</p>
+            <h3><span class="t-it">Sviluppo software per dispositivi medicali</span><span class="t-en">Software development for medical devices</span></h3>
+            <p>
+              <span class="t-it">Requisiti e design funzionale, implementazione back-end in C++/Python, gestione dati DICOM, integrazione continua e coordinamento cross-team per software destinato a un contesto clinico regolamentato.</span>
+              <span class="t-en">Requirements and functional design, back-end implementation in C++/Python, DICOM data handling, continuous integration and cross-team coordination for software destined for a regulated clinical setting.</span>
+            </p>
           </div>
           <div class="consult-card consult-amber">
-            <h3>Guida tecnica di team R&amp;D</h3>
-            <p>Affiancamento nella definizione della roadmap tecnica e nel coordinamento di gruppi di sviluppo imaging, con esperienza diretta nella gestione di un team di 15 persone su un prodotto clinico.</p>
+            <h3><span class="t-it">Guida tecnica di team R&amp;D</span><span class="t-en">Technical leadership for R&amp;D teams</span></h3>
+            <p>
+              <span class="t-it">Affiancamento nella definizione della roadmap tecnica e nel coordinamento di gruppi di sviluppo imaging, con esperienza diretta nella gestione di un team di 15 persone su un prodotto clinico.</span>
+              <span class="t-en">Support in defining the technical roadmap and coordinating imaging development teams, with hands-on experience managing a 15-person team on a clinical product.</span>
+            </p>
           </div>
         </div>
 
         <div class="consult-cta">
-          <p>Hai in mente un problema di imaging che vale la pena discutere?</p>
-          <a href="#contatti" class="btn btn-primary">Parliamone</a>
+          <p>
+            <span class="t-it">Hai in mente un problema di imaging che vale la pena discutere?</span>
+            <span class="t-en">Got an imaging problem worth discussing?</span>
+          </p>
+          <a href="#contatti" class="btn btn-primary">
+            <span class="t-it">Parliamone</span>
+            <span class="t-en">Let's talk</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMPETENZE -->
+  <!-- COMPETENZE / SKILLS -->
   <section class="section" id="competenze">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Competenze tecniche</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Competenze tecniche</span>
+          <span class="t-en">Technical skills</span>
+        </p>
       </div>
       <div class="col-content">
         <div class="skills-grid">
           <div class="skill-group">
-            <h4>Linguaggi &amp; sviluppo</h4>
+            <h4><span class="t-it">Linguaggi &amp; sviluppo</span><span class="t-en">Development</span></h4>
             <p>C++, C, Python, CUDA, MATLAB/Simulink, Git, CMake, Agile</p>
           </div>
           <div class="skill-group">
-            <h4>Imaging medicale</h4>
+            <h4><span class="t-it">Imaging medicale</span><span class="t-en">Medical imaging</span></h4>
             <p>DICOM, ITK, VTK, RTK, OpenCV, OpenGATE, Geant4</p>
           </div>
           <div class="skill-group">
-            <h4>Infrastruttura</h4>
-            <p>Linux, sistemi embedded, integrazione di sistema, Slurm, Jira</p>
+            <h4><span class="t-it">Infrastruttura</span><span class="t-en">Infrastructure</span></h4>
+            <p>
+              <span class="t-it">Linux, sistemi embedded, integrazione di sistema, Slurm, Jira</span>
+              <span class="t-en">Linux, embedded systems, systems integration, Slurm, Jira</span>
+            </p>
           </div>
           <div class="skill-group">
-            <h4>Lingue</h4>
-            <p>Italiano (madrelingua), Inglese (fluente), Francese (intermedio)</p>
+            <h4><span class="t-it">Lingue</span><span class="t-en">Spoken languages</span></h4>
+            <p>
+              <span class="t-it">Italiano (madrelingua), Inglese (fluente), Francese (intermedio)</span>
+              <span class="t-en">Italian (native), English (fluent), French (intermediate)</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTATTI -->
+  <!-- CONTATTI / CONTACT -->
   <section class="section section-alt" id="contatti">
     <div class="wrap two-col">
       <div class="col-label">
-        <p class="eyebrow-plain">Contatti</p>
+        <p class="eyebrow-plain">
+          <span class="t-it">Contatti</span>
+          <span class="t-en">Contact</span>
+        </p>
       </div>
       <div class="col-content">
-        <p class="contact-lede">Scrivimi per una consulenza, una collaborazione o semplicemente per parlare di CBCT.</p>
+        <p class="contact-lede">
+          <span class="t-it">Scrivimi per una consulenza, una collaborazione o semplicemente per parlare di CBCT e tecnologia.</span>
+          <span class="t-en">Get in touch for a consulting engagement, a collaboration, or just to talk about CBCT and technologies.</span>
+        </p>
         <ul class="contact-list">
           <li><a href="mailto:gabriele.belotti@polimi.it">gabriele.belotti@polimi.it</a></li>
           <li><a href="tel:+393349117987">+39 334 911 7987</a></li>
+          <li><a href="https://www.linkedin.com/in/gabriele-belotti-phd/" target="_blank" rel="noopener">linkedin.com/in/gabriele-belotti-phd</a></li>
           <li><a href="https://github.com/GabrieleBelotti" target="_blank" rel="noopener">github.com/GabrieleBelotti</a></li>
-          <li class="contact-location">Seriate (BG), Italia</li>
+          <li><a href="https://www.researchgate.net/profile/Gabriele-Belotti-2" target="_blank" rel="noopener">researchgate.net/profile/Gabriele-Belotti-2</a></li>
+          <li class="contact-location">
+            <span class="t-it">Milano (MI), Italia</span>
+            <span class="t-en">Milan (MI), Italy</span>
+          </li>
         </ul>
       </div>
     </div>
