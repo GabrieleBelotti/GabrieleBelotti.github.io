@@ -71,9 +71,8 @@ html[data-lang="en"] .t-it { display: none; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.brand { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; }
 
-.header-right { display: flex; align-items: center; gap: 34px; }
+.header-right { display: flex; align-items: center; gap: 34px; width: 100%; justify-content: space-between; }
 
 .site-nav { display: flex; align-items: center; gap: 26px; }
 .site-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.95rem; padding-bottom: 2px; border-bottom: 1px solid transparent; }
