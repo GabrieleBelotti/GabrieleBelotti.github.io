@@ -1,0 +1,72 @@
+# Gabriele Belotti, PhD
+
+> Independent consultant and biomedical engineer based in Milan, Italy, specialising
+> in X-ray imaging software and systems: CBCT and cone-beam tomographic reconstruction,
+> image quality and detector characterisation, geometric (flexmap) calibration,
+> Monte Carlo simulation, and embedded electronics for medical and industrial imaging
+> devices. PhD from Politecnico di Milano on in-room image guidance for hadron therapy.
+
+## Summary
+
+- Name: Gabriele Belotti (Gabriele Belotti, PhD)
+- Role: Independent X-ray imaging software and systems consultant
+- Location: Milan, Italy. Available for remote and on-site work across Europe.
+- Contact: gabriele.belotti@polimi.it
+- Languages: Italian (native), English (fluent), French (intermediate)
+- Past roles: X-Ray Image-Processing / Software Engineer at Cefla; Head of the Imaging
+  Core Group (15 people) at medPhoton; Researcher in Computer-Aided Radiation Therapy
+  at Politecnico di Milano (robotic C-arm for the CNAO particle therapy centre);
+  Visiting PhD Researcher at INSA Lyon / CREATIS; Research Engineer intern at ICube Lab.
+
+## Consulting areas
+
+- Image quality and CBCT validation (algorithm parametrisation, phantom and clinical
+  data analysis, flat panel detector QC to IEC standards)
+- Tomographic reconstruction (cone-beam pipelines, field-of-view extension, scatter
+  correction; RTK, ITK/VTK, custom C++/CUDA)
+- Geometric calibration of robotic systems (flexmap calibration, 9-degree-of-freedom
+  calibration, Factory Acceptance Test validation)
+- Monte Carlo simulation (Geant4 / OpenGATE, scatter studies, synthetic data, Slurm/HPC)
+- Embedded systems and instrument electronics (sensor integration, detector and
+  acquisition electronics, motion control, microcontroller firmware, MATLAB/Simulink,
+  hardware/software co-design)
+- Medical device software development (C++/Python, DICOM, CI, regulated clinical software)
+- C++ codebase development and long-term maintenance for imaging and industrial machinery
+- Technical leadership for R&D imaging teams
+
+## Engagement models
+
+Fixed-scope project (4-8 weeks); ongoing technical advisory retainer (a few hours a
+month); embedded engineer (3-6 months full-time); fractional technical lead (1-2 days
+a month); one-off assessment or second opinion (1-3 days).
+
+## Pages
+
+- English home / about: https://gabrielebelotti.github.io/en/
+- Experience: https://gabrielebelotti.github.io/en/experience.html
+- Research and publications: https://gabrielebelotti.github.io/en/research.html
+- Consulting: https://gabrielebelotti.github.io/en/consulting.html
+- Contact: https://gabrielebelotti.github.io/en/contact.html
+- Italian version: https://gabrielebelotti.github.io/it/
+
+## Profiles
+
+- LinkedIn: https://www.linkedin.com/in/gabriele-belotti-phd/
+- GitHub: https://github.com/GabrieleBelotti
+- Google Scholar: https://scholar.google.it/citations?user=ADnUZPYAAAAJ
+- ORCID: https://orcid.org/0000-0003-2630-745X
+- ResearchGate: https://www.researchgate.net/profile/Gabriele-Belotti-2
+
+## Selected publications
+
+- Belotti G. et al. (2024). Extension of the cone-beam CT field-of-view using two
+  complementary short scans. Medical Physics 51(5), 3391-3404.
+  https://doi.org/10.1002/mp.16869
+- Belotti G. et al. (2023). A new system for in-room image guidance in particle
+  therapy at CNAO. Physica Medica 114, 103162.
+  https://doi.org/10.1016/j.ejmp.2023.103162
+- Belotti G., Rit S., Baroni G. (2022). Extension of the cone-beam CT field-of-view
+  using two short scans with displaced centers of rotation. Proc. SPIE XCT22.
+  https://doi.org/10.1117/12.2646384
+- PhD thesis: Development of Technologies for In-Room Image Guidance in Hadron Therapy,
+  Politecnico di Milano, 2024 (cum laude).

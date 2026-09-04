@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://gabrielebelotti.github.io/en/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/en/experience.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/experience.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/en/research.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/research.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/research.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/en/consulting.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/consulting.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/en/contact.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/contact.html"/>
+  </url>
+
+  <url>
+    <loc>https://gabrielebelotti.github.io/it/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/it/experience.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/experience.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/experience.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/it/research.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/research.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/research.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/research.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/it/consulting.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/consulting.html"/>
+  </url>
+  <url>
+    <loc>https://gabrielebelotti.github.io/it/contact.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gabrielebelotti.github.io/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gabrielebelotti.github.io/it/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gabrielebelotti.github.io/en/contact.html"/>
+  </url>
+
+</urlset>
