@@ -28,8 +28,7 @@
   calibration, Factory Acceptance Test validation)
 - Monte Carlo simulation (Geant4 / OpenGATE, scatter studies, synthetic data, Slurm/HPC)
 - Embedded systems and instrument electronics (sensor integration, detector and
-  acquisition electronics, motion control, microcontroller firmware, MATLAB/Simulink,
-  hardware/software co-design)
+  acquisition electronics, microcontroller firmware, hardware/software co-design)
 - Medical device software development (C++/Python, DICOM, CI, regulated clinical software)
 - C++ codebase development and long-term maintenance for imaging and industrial machinery
 - Technical leadership for R&D imaging teams
