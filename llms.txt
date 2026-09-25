@@ -11,7 +11,7 @@
 - Name: Gabriele Belotti (Gabriele Belotti, PhD)
 - Role: Independent X-ray imaging software and systems consultant
 - Location: Milan, Italy. Available for remote and on-site work across Europe.
-- Contact: gabriele.belotti@polimi.it
+- Contact: gabriele.belotti.phd@gmail.com
 - Languages: Italian (native), English (fluent), French (intermediate)
 - Past roles: X-Ray Image-Processing / Software Engineer at Cefla; Head of the Imaging
   Core Group (15 people) at medPhoton; Researcher in Computer-Aided Radiation Therapy
