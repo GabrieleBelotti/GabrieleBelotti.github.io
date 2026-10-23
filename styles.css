@@ -193,8 +193,15 @@ a { color: var(--accent-ink); }
 .consult-card { background: var(--panel); padding: 24px 26px; border-left: 3px solid transparent; }
 .consult-teal { border-left-color: var(--accent); }
 .consult-amber { border-left-color: var(--warm); }
-.consult-card h3 { font-size: 1.05rem; margin-bottom: 0.5em; }
-.consult-card p { font-size: 0.95rem; margin-bottom: 0; }
+.consult-card h3 { font-size: 1.05rem; margin: 0; }
+.consult-card p { font-size: 0.95rem; margin: 0.7em 0 0; }
+.consult-card summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.consult-card summary::-webkit-details-marker { display: none; }
+.consult-card summary::after { content: "+"; flex: none; font-size: 1.4rem; line-height: 1; color: var(--accent); transition: transform 0.2s ease; }
+.consult-amber summary::after { color: var(--warm); }
+.consult-card[open] summary::after { transform: rotate(45deg); }
+.consult-card summary:hover h3 { color: var(--accent-ink); }
+.consult-card summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .consult-cta { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
 .consult-cta p { font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--ink); margin: 0; }
